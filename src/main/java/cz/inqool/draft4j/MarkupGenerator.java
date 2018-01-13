@@ -32,7 +32,7 @@ import static java.util.Collections.singletonList;
 public class MarkupGenerator {
 
     private static final String INDENT = "  ";
-    private static final String BREAK = "<br>";
+    private static final String BREAK = "<br></br>";
     private static final String DATA_ATTRIBUTE = "^data-([a-z0-9-]+)$";
 
     private static final StyleMap DEFAULT_STYLE_MAP = new StyleMap() {{
@@ -482,7 +482,7 @@ public class MarkupGenerator {
         return text.replace("&", "&amp;")
                 .replace("<", "&lt;")
                 .replace(">", "&gt;")
-                .replace("\u00A0", "&nbsp;")
+                .replace("\u00A0", "&#160;")
                 .replace("\n", BREAK + "\n");
     }
 
